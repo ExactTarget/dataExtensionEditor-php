@@ -1,0 +1,157 @@
+body {
+	font-family: arial;
+	font-size: 14px;
+background: #ffffff; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIzMSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZDhmMGZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top,  #ffffff 31%, #d8f0ff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,#ffffff), color-stop(100%,#d8f0ff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 31%,#d8f0ff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 31%,#d8f0ff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 31%,#d8f0ff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 31%,#d8f0ff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d8f0ff',GradientType=0 ); /* IE6-8 */
+}
+
+b {
+	color: 333;
+}
+
+.header {
+	text-align: center;
+}
+h1 {
+	font-family: arial;
+	font-size: 36px;
+	color: #333;
+}
+.info {
+	font-size: 16px;
+	color: #666;
+}
+
+.content {
+	width: 600px;
+	margin: auto auto;
+}
+.not-saved {
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #EE6767;
+}
+.saved {
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #8BD06D;
+}
+.word {
+	font-size: 24px;
+}
+.btn {
+	font-size: 24px;
+}
+.word-list {
+	border: solid 1px #bbb;
+	padding: 10px;
+	height: 400px;
+	overflow:auto;
+}
+
+.hide {
+    display: none;
+}
+
+/* Jumbotrons
+-------------------------------------------------- */
+.jumbotron {
+  position: relative;
+}
+.jumbotron h1 {
+  margin-bottom: 9px;
+  font-size: 81px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.jumbotron p {
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+.jumbotron .btn-large {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 14px 24px;
+  margin-right: 10px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+/* Masthead (docs home) */
+.masthead {
+  padding-top: 36px;
+  margin-bottom: 72px;
+}
+.masthead h1,
+.masthead p {
+  text-align: center;
+}
+.masthead h1 {
+  margin-bottom: 18px;
+}
+.masthead p {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+/* Textual links in masthead */
+.masthead-links {
+  margin: 0;
+  list-style: none;
+}
+.masthead-links li {
+  display: inline;
+  padding: 0 10px;
+  color: rgba(255,255,255,.25);
+}
+
+/* Specific jumbotrons
+------------------------- */
+/* supporting docs pages */
+.subhead {
+  padding-bottom: 0;
+  margin-bottom: 9px;
+}
+.subhead h1 {
+  font-size: 54px;
+}
+
+h2.modalLoadingMsg {
+	margin: 35% 5%;
+	text-align: center;
+}
+
+h2#editorInitMsg {
+	margin: 35% 5%;
+	text-align: center;
+}
+
+#grid {
+	background: white;
+}
+
+#etLogo {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 300;
+	height: 125;
+	text-align: left;
+}
+
+#etLogo img {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}

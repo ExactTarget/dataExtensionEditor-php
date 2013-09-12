@@ -1,0 +1,8 @@
+<?php
+return array(
+    'appsignature' => 'none', 
+	'clientid' => 'CCCCCCCCCCCCCCCCCCCCCCCC',
+	'clientsecret' => 'CCCCCCCCCCCCCCCCCCCCCCCC',
+	'defaultwsdl' => 'https://webservice.exacttarget.com/etframework.wsdl'
+);
+?>
