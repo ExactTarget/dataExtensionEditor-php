@@ -17,7 +17,7 @@ if(!isset($_SESSION)) {session_start();}
 //$_SESSION['refreshToken'] = $decodedJWT->request->user->refreshToken;			
 
 // TODO: REMOVE LATER, BOOTSTRAPPING AUTH FOR RUNNING LOCALLY
-$_SESSION['etClient'] = new ET_Client( false, true );
+$_SESSION['etClient'] = new ET_Client( true, true );
 
 $appName = "OEM Sample App";
 $appDescription = "Simple PHP app focused on implementing the Fuel Editor";

@@ -58,7 +58,7 @@ class ET_Client extends SoapClient {
             } else {
                 throw new Exception('Unable to determine stack using /platform/v1/endpoints/:'.$endpointResponse->body);            
             }
-            } catch (Exception $e) {
+        } catch (Exception $e) {
             throw new Exception('Unable to determine stack using /platform/v1/endpoints/: '.$e->getMessage());
         }       
         parent::__construct($_SERVER['DOCUMENT_ROOT'] . '/cache/ExactTargetWSDL.xml', array('trace'=>1, 'exceptions'=>0));

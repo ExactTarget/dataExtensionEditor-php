@@ -1,7 +1,7 @@
 	<!--</div>-->
 
 	<!-- Insert Modal -->
-	<div id="editor-example-modal" class="modal hide fade">
+	<div id="deEditor-modal" class="modal hide fade">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			<h3></h3>
@@ -18,6 +18,7 @@
 		<img src="/img/ET-Logo-On-Orange-Web-Small.png" id="etLogo" />
 	</div>
 
+	</div><!-- /#deEditor-->
 	<script src="/js/app.js"></script>
   </body>
 </html>
