@@ -32,10 +32,25 @@
     <![endif]-->
 
   </head>
-  <body data-spy="scroll">           
+  <body data-spy="scroll" style="padding-top: 2%;">           
     <div id="deEditorAlert" class="alert fade hide">
         <button type="button" class="close" id="notification-dismiss" data-dismiss="alert">&times;</button>
         <h4></h4>
     </div>
+	<div class="row-fluid">
+		<div class="span10 offset1">
+			<div id="deEditorNav" class="navbar navbar-inverse">
+				<div class="navbar-inner">
+					<div class="container">
+						<span class="pull-right">
+							<div class="brand">
+								Select a Data Extension: <!-- Programmatically create our select -->
+							</div><!-- /.brand -->
+						</span>
+					</div><!-- /.container -->
+				</div><!-- /.navbar-inner -->
+			</div><!-- /#deEditorNav -->
+		</div>
+	</div>
     <div id="deEditor" class="row-fluid">
         <section id="grid"></section>
