@@ -18,12 +18,13 @@
     
     <script>        
         var token = '<?php echo $this->eprint( $this->token ); ?>';              
+		var listOfDEs = {<?php echo $this->eprint( $this->listOfDEs ); ?>};
         localStorage.setItem("token", token);
         //console.log(token);
     </script>
     
     <!-- requirejs -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js"></script>
+    <script data-main="/js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.5/require.min.js"></script>
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

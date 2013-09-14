@@ -19,13 +19,20 @@ if(!isset($_SESSION)) {session_start();}
 // TODO: REMOVE LATER, BOOTSTRAPPING AUTH FOR RUNNING LOCALLY
 $_SESSION['etClient'] = new ET_Client( true, true );
 
-$appName = "OEM Sample App";
-$appDescription = "Simple PHP app focused on implementing the Fuel Editor";
+// Prepopulate the list of DEs to prevent an additional call
+$getDE = new ET_DataExtension();
+$getDE->authStub = $_SESSION['etClient'];
+$getDE->props = array( "CustomerKey" => "Name" );
+$results = $getDE->get();
+
+$appName = "Data Extension Editor";
+$appDescription = "Mod your DEs";
 
 // Configure Data and Assign to Vars for use in Templating
 $savant->title			= $appName;
 $savant->appDescription = $appDescription;
 $savant->token			= $_SESSION['etClient']->authToken;
+$savant->listOfDEs		= $results;
 
 // Display the index.tpl.php template with the above data running
 $savant->display( "index.tpl.php" );

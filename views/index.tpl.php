@@ -9,17 +9,19 @@
 		<div class="container">    
 			<div class="row">
 				<div class="span12">
-					<h1>Organization / Tenant Listings
+					<h1>Data Extensions
+						<!--
 						<div class="btn-group pull-right">
 							<button class="btn btn-primary" id="btnCreateTenant">Create New Tenant</button>
 						</div>
+						-->
 					</h1>
 					<div class="container">			
 						<table id="grid" class="table table-bordered datagrid">
 							<thead>
 							<tr>
 								<th>
-									<span class="datagrid-header-title">Accounts</span>
+									<span class="datagrid-header-title">D.E.</span>
 						 
 									<div class="datagrid-header-left">
 										<div class="input-append search datagrid-search">
@@ -94,7 +96,4 @@
 				</div>
 			</div>
 		</div>
-
-		<script src="/js/datasource-accounts.js"></script>
-		<script src="/js/index.js"></script>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php'; ?>

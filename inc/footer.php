@@ -19,6 +19,5 @@
 	</div>
 
 	</div><!-- /#deEditor-->
-	<script src="/js/app.js"></script>
   </body>
 </html>
