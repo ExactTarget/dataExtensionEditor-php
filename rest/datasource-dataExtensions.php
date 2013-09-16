@@ -9,7 +9,7 @@
     function getColumnsForGivenDE( $dename ) {
         $getDEColumns           = new ET_DataExtension_Column();
         $getDEColumns->authStub = $_SESSION['etClient'];
-        $getDEColumns->props    = array( 'CustomerKey', 'Name' );
+        $getDEColumns->props    = array( 'Name', 'FieldType' );
         $getDEColumns->filter   = array(
                                     'Property' => 'CustomerKey',
                                     'SimpleOperator' => 'equals',
@@ -25,15 +25,16 @@
             if( isset( $_GET['rows'] ) && $_GET['rows'] ) {
                 // Get Columns first
                 $columns = getColumnsForGivenDE( $_GET['deCustKey'] );
-                // TODO: May need to massage the data
-                // TODO: Sanity check that we didn't have an error on column call
+                $fieldArr = array();
+                foreach( $columns->results as $fieldObj ) {
+                    $fieldArr[] = $fieldObj->Name;
+                }
                 
                 // Now fetch rows
                 $getDERows              = new ET_DataExtension_Row();
                 $getDERows->authStub    = $_SESSION['etClient'];
-                $getDERows->props       = array( 'Key', 'Value' );
+                $getDERows->props       = $fieldArr;
                 $getDERows->CustomerKey = $_GET['deCustKey'];
-
                 $callResult             = $getDERows->get();
             }
 

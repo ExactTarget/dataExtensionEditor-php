@@ -1,4 +1,5 @@
 define( function( require ) {
+    var $ = require( 'jquery' );
     var DEDataSource = function (options) {
         this._formatter = options.formatter;
         var addedColumns = options.columns
@@ -27,15 +28,20 @@ define( function( require ) {
             var columns = this._columns
             var baseUrl = this._baseUrl;
             var deCustKey = '?deCustKey=';
+            //var options = options || {};
+            console.log( 'CALLING ROWS: ', dename );
             setTimeout(function () {        
                 if (dename != "") {
-                    var $url = baseUrl + deCustKey + dename + '&rows=1';
-                    $.ajax($url).done(function(response){
-                        var data = JSON.parse(response).results;
+                    var url = baseUrl + deCustKey + dename + '&rows=1';
+                    $.ajax(url, {
+                        type: 'GET',
+                    }).done(function(response){
+                        console.log( 'ROWS: ', response );
+                        var data = response.results;
                         results = data;
                         options.columns = columns;
                         options.dataextension = dename;
-                        popGrid(results,options,callback);                          
+                        popGrid(results, options, callback, self._formatter);                          
                     });
                 } else {
                     // No data extension. Return zero results to
@@ -45,8 +51,8 @@ define( function( require ) {
             }, this._delay)
         }
     }
-    
-    function popGrid(results,options,callback)
+
+    function popGrid(results,options,callback,formatter)
     {
         var count = results.length;
         var startIndex = options.pageIndex * options.pageSize;
@@ -58,7 +64,8 @@ define( function( require ) {
         data = results.slice(startIndex, endIndex);
         
         $.each(data, function( index, item ) {item.Buttons = '<div class="btn-group"><button type="button" class="btn btn-primary deedit"><i class="icon-edit icon-white" /> Edit</button> <button type="button" class="btn btn-primary dedelete"><i class="icon-trash icon-white" /> Delete</button></div>';});                                
-        if (self._formatter) self._formatter(data);
+        //if (self._formatter) self._formatter(data);
+        if( formatter ) { formatter(data); }
 
         callback({ data: data, start: start, end: end, count: count, pages: pages, page: page });
         

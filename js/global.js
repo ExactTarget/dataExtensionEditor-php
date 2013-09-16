@@ -25,7 +25,7 @@ define( function( require ) {
 
     $('#dataExt').bind('change',function(){
         if (this.id != "") {
-            console.log($('.blankOption'));
+            //console.log($('.blankOption'));
             $('.blankOption').remove();
             deCustomerKey = $('#' + this.id).val();
             var url = baseUrl + '?deCustKey=' + deCustomerKey + '&columns=1';
@@ -34,7 +34,7 @@ define( function( require ) {
                 async: false,
                 dataType: 'json'
             }).done(function(json){
-                console.log( 'DONE WITH CALL: ', json );
+                //console.log( 'DONE WITH CALL: ', json );
                 var columns = json;
                 columnsArray = [];
                 
@@ -47,12 +47,28 @@ define( function( require ) {
                     columnObj['sortable'] = true;
                     columnsArray.push(columnObj)
                 }       
+                console.log( 'columnsArr: ', columnsArray);
                 
                 var dataSource = new DEDataSource({
                     columns: columnsArray,
                     dataextension: deCustomerKey,
+                    formatter: function( data ) {
+                        var rowArr = [];
+                        $.each( data, function( index, item ) {
+                            //var currObj = {};
+                            for( var x = 0; x < item.Properties.Property.length; x++ ){
+                                item[item.Properties.Property[x]['Name']] =  item.Properties.Property[x]['Value'];
+                                //currObj[item.Properties.Property[x]['Name']] =  item.Properties.Property[x]['Value'];
+                            }
+                            //rowArr.push( currObj );
+                        });
+                        console.log( rowArr );
+                        //return rowArr;
+                    },
                     delay: 250
                 });
+
+                //dataSource.data();
                 
                 var temp = $('#deGridTemp').clone();
                 temp.attr('id','deGrid');

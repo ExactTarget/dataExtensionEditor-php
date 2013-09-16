@@ -38,32 +38,6 @@ define( function( require ) {
 	*/
 
 	/*****************************
-	MODAL COMMON BUTTONS
-	*****************************/
-	// Handle update modal closing modal click
-	$(document).on('click', '#modalClose', function (event) {
-		modalState.noReload = true;
-		$modal.modal('hide');
-	});
-
-	/*****************************
-	MODAL EVENT METHODS
-	*****************************/
-	$modal.on( 'show', function() {
-		$('.modal-header h3').html( modalState.header );
-		$('#modalSave').html( modalState.saveBtnText );
-		$('#modalSave').addClass( modalState.actionFilter );
-	});
-
-	$modal.on( 'hidden', function() {
-		$('#modalSave').removeClass( modalState.actionFilter );
-		if( !modalState.noReload ) {
-			$('#grid').datagrid('reload');
-		}
-		modalState = {};
-	});
-
-	/*****************************
 	LOAD CLIENT SIDE TEMPLATES
 	*****************************/
 	$.getJSON('/templateList.json', function( templates ) {
