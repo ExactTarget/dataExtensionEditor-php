@@ -6,7 +6,7 @@
 			<div class="alert alert-error"><b>Error</b> Unable to obtain an access token</div>
 		<?php endif; ?>
 					
-		<div id="tableholder">
+		<div id="tableholder" class="span10 offset1">
 			<table id="deGrid" class="table table-bordered datagrid">
 				<thead>
 				<tr>
@@ -63,5 +63,5 @@
 				</tfoot>
 			</table>	
 		</div>
-		<div id="tableholdertemp"></div>
+		<div id="tableholdertemp" class="span10 offset1"></div>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/footer.php'; ?>
