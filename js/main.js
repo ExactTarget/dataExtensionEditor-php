@@ -15,7 +15,7 @@ define( function( require ) {
 				'./jquery.min'
 			],
 			'fuelux': [
-				'//fuelux.exacttargetapps.com/fuelux-imh/2.3/',
+				'//fuelcdn.com/fuelux-imh/2.3/',
 				'./fuelux'
 			],
 			'icanhaz': [

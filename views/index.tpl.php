@@ -13,7 +13,7 @@
 					<th>
 						<span class="datagrid-header-title">DataExtension Listing</span>
 						<div class="datagrid-header-right">
-							<button id="deadd" disabled="disabled">Add Row</button>
+							<button id="deadd">Add Row</button>
 						</div><!-- /.datagrid-header-right -->
 					</th>
 				</tr>
