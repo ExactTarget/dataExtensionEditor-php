@@ -18,9 +18,9 @@
     
     <script>        
         var token = '<?php echo $this->eprint( $this->token ); ?>';              
-		var listOfDEs = {<?php echo $this->eprint( $this->listOfDEs ); ?>};
+		// Let's bootstrap the DE list
+		var listOfDEs = <?php print( $this->listOfDEs ); ?>;
         localStorage.setItem("token", token);
-        //console.log(token);
     </script>
     
     <!-- requirejs -->
@@ -44,7 +44,10 @@
 					<div class="container">
 						<span class="pull-right">
 							<div class="brand">
-								Select a Data Extension: <!-- Programmatically create our select -->
+								Select a Data Extension: 
+								<select id="deList">
+									<option value="" class="blankOption">--NONE SELECTED--</option>
+								</select>
 							</div><!-- /.brand -->
 						</span>
 					</div><!-- /.container -->
@@ -53,4 +56,4 @@
 		</div>
 	</div>
     <div id="deEditor" class="row-fluid">
-        <section id="grid"></section>
+	<section id="grid"></section>

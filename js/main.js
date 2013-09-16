@@ -34,14 +34,17 @@ define( function( require ) {
 			'icanhaz': {
 				exports: 'ich',
 				deps: ['Mustache']
+			},
+			'app': {
+				deps: ['jquery', 'icanhaz']
 			}
 		}
 	});
 
-	require(['jquery', 'icanhaz', 'views/dashboard', 'fuelux/all'], function( $, ich, Dashboard ) {
+	require(['jquery', 'icanhaz', 'views/dashboard', 'app', 'fuelux/all'], function( $, ich, Dashboard ) {
 		// Init the app w/o backbone? How?
 		console.log('Should be handling the index now' );
 		var Dashboard = new Dashboard();
-		Dashboard.loadGrid();
+		//Dashboard.loadGrid();
 	});
 });

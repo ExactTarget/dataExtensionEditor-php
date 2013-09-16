@@ -1,0 +1,6 @@
+[
+    {
+        "name": "exampleTemplateName",
+        "template": "/views/client/exampleTemplateName.html"
+    }
+]

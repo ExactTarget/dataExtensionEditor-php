@@ -9,7 +9,7 @@
     function getColumnsForGivenDE( $dename ) {
         $getDEColumns           = new ET_DataExtension_Column();
         $getDEColumns->authStub = $_SESSION['etClient'];
-        $getDEColumns->props    = array( 'CustomerKey', 'Name' ):
+        $getDEColumns->props    = array( 'CustomerKey', 'Name' );
         $getDEColumns->filter   = array(
                                     'Property' => 'CustomerKey',
                                     'SimpleOperator' => 'equals',

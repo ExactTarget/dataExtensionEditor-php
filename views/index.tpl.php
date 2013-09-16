@@ -21,30 +21,10 @@
 							<thead>
 							<tr>
 								<th>
-									<span class="datagrid-header-title">D.E.</span>
-						 
-									<div class="datagrid-header-left">
-										<div class="input-append search datagrid-search">
-											<input type="text" class="input-medium" placeholder="Search">
-											<button type="button" class="btn"><i class="icon-search"></i></button>
-										</div>
-									</div>
-									<!--
+									<span class="datagrid-header-title">DataExtension Listing</span>
 									<div class="datagrid-header-right">
-										<div class="select filter" data-resize="auto">
-											<button type="button" data-toggle="dropdown" class="btn dropdown-toggle">
-												<span class="dropdown-label"></span>
-												<span class="caret"></span>
-											</button>
-											<ul class="dropdown-menu">
-												<li data-value="all" data-selected="true"><a href="#">All</a></li>
-												<li data-value="type"><a href="#">Message Type</a></li>
-												<li data-value="type"><a href="#">Recent Messages</a></li>
-												<li data-value="type"><a href="#">Favorite</a></li>
-											</ul>
-										</div>
-									</div>
-									-->
+										<button id="deadd" disabled="disabled">Add Row</button>
+									</div><!-- /.datagrid-header-right -->
 								</th>
 							</tr>
 							</thead>
