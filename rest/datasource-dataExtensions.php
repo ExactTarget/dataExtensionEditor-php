@@ -55,16 +55,15 @@
         
         $cleansedData = $jsonText; // THIS WILL CHANGE LATER TO ONLY ACCEPT THE CLEANSED DATA
 
-        /*
-        // Prepare the call via the SDK
-        $postOrganization = new ET_Organization();
-        $postOrganization->authStub = $_SESSION['etClient'];
-        $postOrganization->props = $cleansedData;
-        $callResult = $postOrganization->post();
+        // Now fetch rows
+        $postDERows             = new ET_DataExtension_Row();
+        $postDERows->authStub   = $_SESSION['etClient'];
+        $postDERows->props      = $cleansedData;
+        $postDERows->Name       = $_GET['deCustKey'];
+        $callResult             = $postDERows->post();
 
         // Invalidate
         //invalidateUser( castData, reelData );
-        */
     }
 
     // Updating a new organization

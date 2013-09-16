@@ -108,9 +108,10 @@ define( function( require ) {
                         row[allColumns[index].property] =  allValues[index];
                     }
                 }
+                var url = '/rest/datasource-dataExtensions.php?deCustKey=' + options.dataextension;
                 // Post to the Rest endpoint then reload the page
-                $.ajax({url: '/rows/' + options.dataextension,
-                    type: 'post',
+                $.ajax(url, {
+                    type: 'POST',
                     dataType: 'json',
                     data: JSON.stringify(row)
                 }).done(function(result){
