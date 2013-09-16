@@ -1,6 +1,7 @@
 define( function( require ) {
 
 	var DEDataSource = function (options) {
+		console.log( 'OPTIONS: ', options );
 		this._formatter = options.formatter;
 		var addedColumns = options.columns
 		addedColumns.push({ property: "Buttons", label: "", sortable: false});
@@ -32,6 +33,11 @@ define( function( require ) {
 				setTimeout(function () {
 					if (dename != "") {
 						$.ajax(url).done(function(response){
+							// Enable the Add Row button
+							if( '' !== currentDE.name ) {
+								$('#deadd').removeAttr( 'disabled' );
+							}
+
 							var data = JSON.parse(response).results;
 							results = data;
 							options.columns = columns;

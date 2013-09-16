@@ -45,7 +45,7 @@
 						<span class="pull-right">
 							<div class="brand">
 								Select a Data Extension: 
-								<select id="deList">
+								<select id="dataExt">
 									<option value="" class="blankOption">--NONE SELECTED--</option>
 								</select>
 							</div><!-- /.brand -->
@@ -56,4 +56,3 @@
 		</div>
 	</div>
     <div id="deEditor" class="row-fluid">
-	<section id="grid"></section>

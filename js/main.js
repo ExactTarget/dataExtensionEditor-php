@@ -7,6 +7,8 @@ define( function( require ) {
 			templates: '../templates',
 			tmpl: './tmpl',
 			app: '../app',
+			global: '../global',
+			datasource: '../datasource',
 			views: '../views',
 			'jquery': [
 				'//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min',
@@ -28,6 +30,12 @@ define( function( require ) {
 			'jquery': {
 				exports: '$'
 			},
+			'datasource': {
+				deps: ['jquery', 'fuelux/all']
+			},
+			'global': {
+				deps: ['jquery', 'datasource']
+			},
 			'fuelux/all': {
 				deps: ['jquery']
 			},
@@ -41,10 +49,8 @@ define( function( require ) {
 		}
 	});
 
-	require(['jquery', 'icanhaz', 'views/dashboard', 'app', 'fuelux/all'], function( $, ich, Dashboard ) {
+	require(['jquery', 'icanhaz', 'app', 'global', 'fuelux/all'], function( $, ich ) {
 		// Init the app w/o backbone? How?
 		console.log('Should be handling the index now' );
-		var Dashboard = new Dashboard();
-		//Dashboard.loadGrid();
 	});
 });

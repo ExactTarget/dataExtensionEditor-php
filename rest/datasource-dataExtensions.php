@@ -22,18 +22,25 @@
         if( !isset( $_GET['deCustKey'] ) ) {
             // TODO: Notify user the deCustKey must be supplied
         } else {
-            // Get Columns first
-            $columns = $getDEColumns( $_GET['deCustKey'] );
-            // TODO: May need to massage the data
-            // TODO: Sanity check that we didn't have an error on column call
-            
-            // Now fetch rows
-            $getDERows              = new ET_DataExtension_Row();
-            $getDERows->authStub    = $_SESSION['etClient'];
-            $getDERows->props       = array( 'Key', 'Value' );
-            $getDERows->CustomerKey = $_GET['deCustKey'];
+            if( isset( $_GET['rows'] ) && $_GET['rows'] ) {
+                // Get Columns first
+                $columns = getColumnsForGivenDE( $_GET['deCustKey'] );
+                // TODO: May need to massage the data
+                // TODO: Sanity check that we didn't have an error on column call
+                
+                // Now fetch rows
+                $getDERows              = new ET_DataExtension_Row();
+                $getDERows->authStub    = $_SESSION['etClient'];
+                $getDERows->props       = array( 'Key', 'Value' );
+                $getDERows->CustomerKey = $_GET['deCustKey'];
 
-            $callResult             = $getDERows->get();
+                $callResult             = $getDERows->get();
+            }
+
+            if( isset( $_GET['columns'] ) && $_GET['columns'] ) {
+                $callResult = getColumnsForGivenDE( $_GET['deCustKey'] );
+
+            }
         }
     }
 

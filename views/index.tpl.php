@@ -17,7 +17,7 @@
 						-->
 					</h1>
 					<div class="container">			
-						<table id="grid" class="table table-bordered datagrid">
+						<table id="deGrid" class="table table-bordered datagrid">
 							<thead>
 							<tr>
 								<th>
