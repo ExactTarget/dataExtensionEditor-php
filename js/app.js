@@ -1,6 +1,6 @@
 define( function( require ) {
 	// Dependencies
-	var DatasourceDE = require( 'data/datasource-dataextensions' );
+	var DatasourceDE = require( 'data/datasource-dataExtensions' );
 
 	/*
 	// App State
