@@ -49,18 +49,22 @@
     if( 'POST' == $_SERVER['REQUEST_METHOD'] ) {
         $jsonText = $_REQUEST['data'];
         foreach( $jsonText as $var ) {
+            // TODO: Store the customer key as the name for the de to add this row into
+            if( 'deCustKey' == $var ) {
+                $deCustKey = $var;
+            }
             // Validate the data
             // Cleanse the data
         }
         
         $cleansedData = $jsonText; // THIS WILL CHANGE LATER TO ONLY ACCEPT THE CLEANSED DATA
 
-        // Now fetch rows
-        $postDERows             = new ET_DataExtension_Row();
-        $postDERows->authStub   = $_SESSION['etClient'];
-        $postDERows->props      = $cleansedData;
-        $postDERows->Name       = $_GET['deCustKey'];
-        $callResult             = $postDERows->post();
+        // Create new row
+        $postDERows                 = new ET_DataExtension_Row();
+        $postDERows->authStub       = $_SESSION['etClient'];
+        $postDERows->props          = $cleansedData;
+        $postDERows->CustomerKey    = $deCustKey;
+        $callResult                 = $postDERows->post();
 
         // Invalidate
         //invalidateUser( castData, reelData );

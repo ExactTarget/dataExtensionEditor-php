@@ -108,7 +108,11 @@ define( function( require ) {
                         row[allColumns[index].property] =  allValues[index];
                     }
                 }
-                var url = '/rest/datasource-dataExtensions.php?deCustKey=' + options.dataextension;
+                var url = '/rest/datasource-dataExtensions.php';
+                // Bolt the deCustKey onto the payload
+                row['deCustKey'] = options.dataextension;
+                console.log( 'ROW TO BE SAVED: ', row );
+
                 // Post to the Rest endpoint then reload the page
                 $.ajax(url, {
                     type: 'POST',

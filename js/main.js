@@ -3,7 +3,6 @@ define( function( require ) {
 		baseUrl: "js/vendor",
 		enforceDefine: true,
 		paths: {
-			data: '../data',
 			templates: '../templates',
 			tmpl: './tmpl',
 			app: '../app',
