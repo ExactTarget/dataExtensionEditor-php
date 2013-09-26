@@ -1,7 +1,13 @@
 <?php
-// TODO: Start sessions
-// TODO: include jwt lib?
-// TODO: Handle JWT
-// TODO: Create new ET_Client
-// TODO: Store new ET_Client in $_SESSION['etClient']
+if( !isset( $_SESSION ) ) {
+    session_start();
+}
+
+if( $_REQUEST['jwt'] ) {
+    $_SESSION['etClient'] = new ET_Client( true, true, $_REQUEST['jwt']);
+} else {
+    // No JWT supplied, let's kick them back to the login page
+    header( 'Location: https://imh.exacttarget.com/' );
+    die();
+}
 ?>

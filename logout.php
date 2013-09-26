@@ -1,4 +1,5 @@
 <?php
-// TODO: Handle logout request
-// TODO: ?
+    unset( $_SESSION['etClient'] );
+    header( 'Location: https://imh.exacttarget.com' );
+    die();
 ?>
