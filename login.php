@@ -6,7 +6,8 @@ if( !isset( $_SESSION ) ) {
 }
 
 if( $_REQUEST['jwt'] ) {
-    $_SESSION['etClient'] = new ET_Client( true, true, $_REQUEST['jwt']);
+    $jwt = $_REQUEST['jwt'];
+    $_SESSION['etClient'] = new ET_Client( true, true, $jwt );
     if( !empty( $_SESSION['etClient'] ) ) {
         header( 'Location: /index.php' );
     }

@@ -34,7 +34,7 @@ class ET_Client extends SoapClient {
         
         if ($getWSDL){$this->CreateWSDL($this->wsdlLoc);}
         
-        if ($params && array_key_exists('jwt', $params)){
+        if ($params && "array" == gettype( $params ) && array_key_exists('jwt', $params)){
             if (!property_exists($this,'appsignature') || is_null($this->appsignature)){
                 throw new Exception('Unable to utilize JWT for SSO without appsignature: Must be provided in config file or passed when instantiating ET_Client');
             }

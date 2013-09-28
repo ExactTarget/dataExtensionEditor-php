@@ -1832,6 +1832,7 @@
               <element name="ContentCheckStatus" type="xsd:string" minOccurs="0" maxOccurs="1" />
               <element name="SyncTextWithHTML" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
               <element name="PreHeader" type="xsd:string" minOccurs="0" maxOccurs="1" />
+              <element name="IsApproved" type="xsd:boolean" minOccurs="0" maxOccurs="1" />
             </sequence>
           </extension>
         </complexContent>
@@ -2992,6 +2993,26 @@
               <element name="ExpireDate" minOccurs="0" maxOccurs="1" type="xsd:dateTime" />
               <element name="ReturnToPoolDate" minOccurs="0" maxOccurs="1" type="xsd:dateTime" />
               <element name="CountryCode" minOccurs="0" maxOccurs="1" type="xsd:string" />
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="SmsConfiguration">
+        <complexContent>
+          <extension base="tns:APIObject">
+            <sequence>
+              <element name="Country" minOccurs="1" maxOccurs="1" type="xsd:string" />
+              <element name="MobileNumber" minOccurs="1" maxOccurs="1" type="xsd:string" />
+              <element name="CodeType" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="Provider" minOccurs="1" maxOccurs="1" type="xsd:string" />
+              <element name="Url" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="MoUrl" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="DlUrl" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="Username" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="Password" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="AccountName" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="TariffClass" minOccurs="0" maxOccurs="1" type="xsd:string" />
+              <element name="Note" minOccurs="0" maxOccurs="1" type="xsd:string" />
             </sequence>
           </extension>
         </complexContent>
