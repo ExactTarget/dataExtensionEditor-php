@@ -1,14 +1,13 @@
 define( function( require ) {
 	// Dependencies
+	var $ = require( 'jquery' );
 	var DatasourceDE = require( 'datasource' );
 
-	/*
 	// App State
 	var currentDE = {
 		customerKey: '',
 		name: ''
 	};
-	*/
 
 	// Configure modal $ objects
 	var $modal = $('#deEditor-modal');
@@ -19,11 +18,11 @@ define( function( require ) {
 	*****************************/
 	var $deListEl = $('#dataExt'); // <ul>
 	// Add a new option for each DE in the list
+	//console.log( 'listOfDEs: ', listOfDEs );
 	for( var x = 0; x < listOfDEs.results.length; x++ ) {
 		$deListEl.append( '<option value="' + listOfDEs.results[x].CustomerKey+ '">' + listOfDEs.results[x].Name + '</option>' );
 	}
 
-	/*
 	// DE List Change Handler
 	$deListEl.on( 'change', function() {
 		var str = '';
@@ -35,7 +34,6 @@ define( function( require ) {
 			loadGrid( currentDE.customerKey );
 		});
 	});
-	*/
 
 	/*****************************
 	LOAD CLIENT SIDE TEMPLATES

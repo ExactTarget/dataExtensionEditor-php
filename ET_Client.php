@@ -46,6 +46,7 @@ class ET_Client extends SoapClient {
             $this->authTokenExpiration = $newexpTime->add($dv); 
             $this->refreshKey = $decodedJWT->request->user->refreshToken;
             $this->packageName = $decodedJWT->request->application->package;
+            $this->timezone = $decodedJWT->request->user->timezone;
         }       
         $this->refreshToken();
 
@@ -70,7 +71,8 @@ class ET_Client extends SoapClient {
             parent::__construct($_SERVER['DOCUMENT_ROOT'] . '/cache/ExactTargetWSDL.xml', array('trace'=>1, 'exceptions'=>0)); 
         }
         try {
-            $currentTime = new DateTime();
+            // TODO: Need to make timezone dynamic
+            $currentTime = new DateTime("now", new DateTimeZone( 'America/Los_Angeles' ));
             if (is_null($this->authTokenExpiration)){
                 $timeDiff = 0;
             } else {
@@ -95,7 +97,8 @@ class ET_Client extends SoapClient {
                     $this->authToken = $authObject->accessToken;
                     $this->internalAuthToken = $authObject->legacyToken;
                     $dv = new DateInterval('PT'.$authObject->expiresIn.'S');
-                    $newexpTime = new DateTime();
+                    // TODO: Need to make timezone dynamic
+                    $newexpTime = new DateTime( "now", new DateTimeZone( 'America/Los_Angeles'));
                     $this->authTokenExpiration = $newexpTime->add($dv); 
                     if (property_exists($authObject,'refreshToken')){
                         $this->refreshKey = $authObject->refreshToken;

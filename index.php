@@ -3,6 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/libs.php";
 
 // Initalize the session
 if(!isset($_SESSION)) {session_start();}
+
+// Utility function
 function objectToArray($d) {
 	if (is_object($d)) {
 		// Gets the properties of the object
@@ -17,11 +19,15 @@ function objectToArray($d) {
 	}
 }
 
+$myClient = new ET_Client();
+$_SESSION['etClient'] = $myClient;
+
 // Bootstrap DEs
 $getDE = new ET_DataExtension();
 $getDE->authStub = $_SESSION['etClient'];
 $getDE->props = array( "CustomerKey", "Name" );
-$results = json_encode( objectToArray( $getDE->get() ) );
+$des = $getDE->get();
+$results = json_encode( objectToArray( $des ) );
 
 $appName = "Data Extension Editor";
 $appDescription = "Mod your DEs";
